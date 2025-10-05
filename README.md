@@ -40,11 +40,26 @@ shopping-cart/
 │ │ ├── models/ # Database models
 │ │ ├── routes/ # API routes
 │ │ └── middleware/ # Error handling
-│ └── tests/ # Jest tests
+│ ├── tests/ # Jest tests
+│ ├── package.json
+│ └── server.js
+│
 ├── frontend/ # React application
-│ └── src/
-│ ├── components/ # React components
-│ └── services/ # API services
+│ ├── src/
+│ │ ├── components/ # React components
+│ │ │ ├── auth/
+│ │ │ ├── cart/
+│ │ │ ├── products/
+│ │ │ ├── layout/
+│ │ │ └── common/
+│ │ ├── context/ # React Context
+│ │ ├── services/ # API services
+│ │ ├── App.jsx
+│ │ └── main.jsx
+│ ├── package.json
+│ ├── vite.config.js
+│ └── index.html
+│
 └── README.md
 
 ## ⚙️ Setup Instructions
@@ -56,15 +71,18 @@ shopping-cart/
 
 ### Clone the Repository
 
-`````git clone <your-repo-url>
-cd ShopKart```
+`````
+git clone <your-repo-url>
+cd ShopKart
+```
 
 
 ### Backend Setup
 
 1. Navigate to backend directory:
 
-````bash
+````
+bash
 cd backend
 
 2. Install dependencies:
@@ -73,20 +91,23 @@ cd backend
 
 3. Create .env file:
 
-```PORT=5000
+```
+PORT=5000
 NODE_ENV=development
 DB_PATH=./shopping_cart.db
 ```
 
 4. Start the server:
 
-```npm run dev
+```
+npm run dev
 
 ```
 
 ### Frontend Setup
 
-```cd ../frontend
+```
+cd ../frontend
 
 # Install dependencies
 npm install
