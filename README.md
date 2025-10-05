@@ -71,56 +71,59 @@ shopping-cart/
 
 ### Clone the Repository
 
-`````
 git clone <your-repo-url>
 cd ShopKart
-```
-
 
 ### Backend Setup
 
 1. Navigate to backend directory:
 
-````
 bash
 cd backend
 
 2. Install dependencies:
+
 ```npm install
-`````
+
 
 3. Create .env file:
-
 ```
+
 PORT=5000
 NODE_ENV=development
 DB_PATH=./shopping_cart.db
-```
 
 4. Start the server:
 
 ```
 npm run dev
 
-```
+
 
 ### Frontend Setup
 
 ```
+
 cd ../frontend
 
 # Install dependencies
+
 npm install
 
 # Create .env file
+
 cat > .env << EOF
 VITE_API_URL=http://localhost:5100/api
 EOF
+
 ```
 
 ### frontend/.env
 
 ```
+
 VITE_API_URL=http://localhost:5100/api
+
+```
 
 ```
