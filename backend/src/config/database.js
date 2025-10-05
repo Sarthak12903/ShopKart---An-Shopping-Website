@@ -5,11 +5,9 @@ const dbPath =
   process.env.DB_PATH || path.join(__dirname, "../../shopping_cart.db");
 const db = new Database(dbPath);
 
-// Enable foreign keys
 db.pragma("foreign_keys = ON");
 
 const initDatabase = () => {
-  // Create users table
   db.exec(`
     CREATE TABLE IF NOT EXISTS users (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -20,7 +18,6 @@ const initDatabase = () => {
     )
   `);
 
-  // Create products table
   db.exec(`
     CREATE TABLE IF NOT EXISTS products (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -34,7 +31,6 @@ const initDatabase = () => {
     )
   `);
 
-  // Create cart table with user_id
   db.exec(`
     CREATE TABLE IF NOT EXISTS cart (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -47,7 +43,6 @@ const initDatabase = () => {
     )
   `);
 
-  // Insert sample products if table is empty
   const count = db.prepare("SELECT COUNT(*) as count FROM products").get();
   if (count.count === 0) {
     const insert = db.prepare(`
@@ -110,7 +105,7 @@ const initDatabase = () => {
       insert.run(...product);
     });
 
-    console.log("✅ Sample products inserted");
+    console.log(" Sample products inserted");
   }
 };
 
