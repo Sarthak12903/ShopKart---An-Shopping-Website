@@ -83,7 +83,8 @@ cd backend
 
 2. Install dependencies:
 
-```npm install
+```
+npm install
 
 
 3. Create .env file:
