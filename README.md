@@ -1,4 +1,4 @@
-# 🛒 Simple Shopping Cart - Full Stack Application
+# 🛒 ShopKart - Full Stack Application
 
 A modern, full-stack shopping cart application built with **React**, **Node.js**, **Express**, and **SQLite**.
 
@@ -38,37 +38,41 @@ A modern, full-stack shopping cart application built with **React**, **Node.js**
 
 ## 📁 Project Structure
 
+## 📁 Project Structure
+
+```bash
 shopping-cart/
-├── backend/ # Node.js + Express API
-│ ├── src/
-│ │ ├── config/ # Database configuration
-│ │ ├── controllers/ # Request handlers
-│ │ ├── models/ # Database models
-│ │ ├── routes/ # API routes
-│ │ └── middleware/ # Error handling
-│ ├── tests/ # Jest tests
-│ ├── package.json
-│ └── server.js
+├── backend/                 # Node.js + Express API
+│   ├── src/
+│   │   ├── config/          # Database configuration
+│   │   ├── controllers/     # Request handlers
+│   │   ├── models/          # Database models
+│   │   ├── routes/          # API routes
+│   │   └── middleware/      # Error handling
+│   ├── tests/               # Jest tests
+│   ├── package.json
+│   └── server.js
 │
-├── frontend/ # React application
-│ ├── src/
-│ │ ├── components/ # React components
-│ │ │ ├── auth/
-│ │ │ ├── cart/
-│ │ │ ├── products/
-│ │ │ ├── layout/
-│ │ │ └── common/
-│ │ ├── context/ # React Context
-│ │ ├── services/ # API services
-│ │ ├── App.jsx
-│ │ └── main.jsx
-│ ├── package.json
-│ ├── vite.config.js
-│ └── index.html
+├── frontend/                # React application
+│   ├── src/
+│   │   ├── components/      # React components
+│   │   │   ├── auth/
+│   │   │   ├── cart/
+│   │   │   ├── products/
+│   │   │   ├── layout/
+│   │   │   └── common/
+│   │   ├── context/         # React Context
+│   │   ├── services/        # API services
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── package.json
+│   ├── vite.config.js
+│   └── index.html
 │
 └── README.md
 
----
+
+```
 
 ## ⚙️ Setup Instructions
 

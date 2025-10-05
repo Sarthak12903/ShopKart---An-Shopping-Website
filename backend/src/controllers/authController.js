@@ -6,7 +6,7 @@ class AuthController {
     try {
       const { name, email, password } = req.body;
 
-      // Validation
+     
       if (!name || !email || !password) {
         return res.status(400).json({
           success: false,
@@ -14,7 +14,7 @@ class AuthController {
         });
       }
 
-      // Email validation
+   
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
         return res.status(400).json({
@@ -23,7 +23,7 @@ class AuthController {
         });
       }
 
-      // Password length validation
+   
       if (password.length < 6) {
         return res.status(400).json({
           success: false,
@@ -31,11 +31,11 @@ class AuthController {
         });
       }
 
-      // Create user
+ 
       const userId = await UserModel.create(name, email, password);
       const user = UserModel.findById(userId);
 
-      // Generate JWT token
+  
       const token = jwt.sign(
         { userId: user.id, email: user.email },
         process.env.JWT_SECRET,
@@ -69,7 +69,7 @@ class AuthController {
     try {
       const { email, password } = req.body;
 
-      // Validation
+  
       if (!email || !password) {
         return res.status(400).json({
           success: false,
@@ -77,7 +77,7 @@ class AuthController {
         });
       }
 
-      // Find user
+     
       const user = UserModel.findByEmail(email);
       if (!user) {
         return res.status(401).json({
@@ -86,7 +86,7 @@ class AuthController {
         });
       }
 
-      // Verify password
+
       const isPasswordValid = await UserModel.verifyPassword(
         password,
         user.password
@@ -98,7 +98,7 @@ class AuthController {
         });
       }
 
-      // Generate JWT token
+      
       const token = jwt.sign(
         { userId: user.id, email: user.email },
         process.env.JWT_SECRET,

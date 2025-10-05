@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 
 class UserModel {
   static async create(name, email, password) {
-    // Hash password
+
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const stmt = db.prepare(`

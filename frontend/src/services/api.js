@@ -10,7 +10,7 @@ const api = axios.create({
   },
 });
 
-// Add token to requests
+
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("token");
@@ -24,7 +24,6 @@ api.interceptors.request.use(
   }
 );
 
-// Add response interceptor for better error handling
 api.interceptors.response.use(
   (response) => response,
   (error) => {
@@ -34,7 +33,7 @@ api.interceptors.response.use(
       );
     }
 
-    // Handle 401 Unauthorized
+   
     if (error.response?.status === 401) {
       localStorage.removeItem("token");
       localStorage.removeItem("user");
@@ -45,7 +44,7 @@ api.interceptors.response.use(
   }
 );
 
-// Auth API calls
+
 export const authAPI = {
   signup: async (name, email, password) => {
     const response = await api.post("/auth/signup", { name, email, password });
@@ -63,7 +62,7 @@ export const authAPI = {
   },
 };
 
-// Product API calls
+
 export const productAPI = {
   getAll: async () => {
     const response = await api.get("/products");
@@ -91,7 +90,7 @@ export const productAPI = {
   },
 };
 
-// Cart API calls
+
 export const cartAPI = {
   getCart: async () => {
     const response = await api.get("/cart");
